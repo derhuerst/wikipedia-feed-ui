@@ -1,0 +1,26 @@
+{
+	"name": "wikipedia-feed-ui",
+	"description": "Serve a Wikipedia hyperdrive feed over HTTP.",
+	"version": "0.1.0",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"wikipedia",
+		"hyperdrive",
+		"hypercore",
+		"http",
+		"gui"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/wikipedia-feed-ui",
+	"repository": "derhuerst/wikipedia-feed-ui",
+	"bugs": "https://github.com/derhuerst/wikipedia-feed-ui/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
+	},
+	"dependencies": {
+	}
+}
