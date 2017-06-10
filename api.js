@@ -6,7 +6,8 @@ const compression = require('compression')
 const path = require('path')
 const serve = require('serve-static')
 
-const page = require('./page')
+const pages = require('./lib/pages')
+const page = require('./lib/page')
 
 const api = express()
 module.exports = api
@@ -16,6 +17,7 @@ api.use(compression())
 
 api.use('/static', serve(path.join(__dirname, 'static'), {index: false}))
 
+api.get('/', pages)
 api.get('/wiki/:slug', page)
 
 api.use((err, req, res, next) => {

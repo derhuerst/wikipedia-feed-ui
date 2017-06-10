@@ -4,7 +4,9 @@
 	"version": "0.1.0",
 	"main": "index.js",
 	"files": [
-		"index.js"
+		"index.js",
+		"api.js",
+		"lib"
 	],
 	"keywords": [
 		"wikipedia",
@@ -26,7 +28,7 @@
 		"express": "^4.15.3",
 		"hsts": "^2.0.0",
 		"hyperdrive": "^9.3.0",
-		"serve-static": "^1.12.3"
-	}
+		"serve-static": "^1.12.3",
+		"slugg": "^1.2.0"
 	}
 }
