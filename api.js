@@ -18,6 +18,7 @@ const archive = hyperdrive(DB)
 const pages = require('./lib/pages')(archive)
 const page = require('./lib/page')(archive)
 const pageHistory = require('./lib/page-history')(archive)
+const onError = require('./lib/error')
 
 const api = express()
 module.exports = api
@@ -30,10 +31,9 @@ api.use('/static', serve(path.join(__dirname, 'static'), {index: false}))
 api.get('/', pages)
 api.get('/wiki/:slug', page)
 api.get('/wiki/:slug/history', pageHistory)
+api.get('/wiki/Special:History/:slug', pageHistory)
 
 api.use((err, req, res, next) => {
 	if (process.env.NODE_DEBUG === 'wikipedia-feed-ui') console.error(err)
-	if (res.headersSent) return next()
-	res.status(err.statusCode || 500).json({error: true, msg: err.message})
-	next()
+	onError(err, req, res, next)
 })
