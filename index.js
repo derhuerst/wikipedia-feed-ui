@@ -2,16 +2,14 @@
 
 const http = require('http')
 
-const api = require('./api')
-const server = http.createServer(api)
+const createApi = require('./api')
 
-const port = process.env.PORT || 3000
-const hostname = process.env.HOSTNAME || ''
+const startServer = (db, port, cb) => {
+	const api = createApi(db)
 
-server.listen(port, (err) => {
-	if (err) {
-		console.error(err)
-		process.exit(1)
-	}
-	console.info(`Listening on ${hostname}:${port}.`)
-})
+	const server = http.createServer(api)
+	server.listen(port, cb)
+	return server
+}
+
+module.exports = startServer
