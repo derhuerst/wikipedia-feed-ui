@@ -18,7 +18,14 @@ npm install wikipedia-feed-ui
 ## Usage
 
 ```js
-todo
+Usage:
+    wiki-feed-ui [-p port][--db path-to-hyperdrive]
+Options:
+	--port  -p  Port to listen on. Default: 3000
+    --db        Path to the P2P Wiki database.
+                Default: ~/Library/Application Support/p2p-wiki/db
+Examples:
+    wiki-feed-ui -p 8080 --db my-custom-p2p-wiki-db
 ```
 
 
