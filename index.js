@@ -9,10 +9,8 @@ const startServer = (db, port, opt, cb) => {
 	openDat(db, (err, dat) => {
 		if (err) return cb(err)
 
-		if (!opt.offline) {
-			dat.joinNetwork()
-			dat.trackStats()
-		}
+		dat.trackStats()
+		if (!opt.offline) dat.joinNetwork()
 
 		const api = createApi(dat)
 		const server = http.createServer(api)

@@ -10,7 +10,8 @@
 		"index.js",
 		"api.js",
 		"lib",
-		"cli.js"
+		"cli.js",
+		"static"
 	],
 	"keywords": [
 		"wikipedia",
