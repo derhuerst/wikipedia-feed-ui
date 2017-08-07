@@ -1,6 +1,6 @@
 # wikipedia-feed-ui
 
-**Serve a Wikipedia hyperdrive feed over HTTP.**
+**Serve a Wikipedia [dat archive](https://github.com/datproject/dat-node) feed over HTTP.**
 
 [![npm version](https://img.shields.io/npm/v/wikipedia-feed-ui.svg)](https://www.npmjs.com/package/wikipedia-feed-ui)
 [![build status](https://img.shields.io/travis/derhuerst/wikipedia-feed-ui.svg)](https://travis-ci.org/derhuerst/wikipedia-feed-ui)
@@ -19,13 +19,13 @@ npm install wikipedia-feed-ui
 
 ```js
 Usage:
-    wiki-feed-ui [-p port][--db path-to-hyperdrive]
+    wiki-feed-ui [-p port] [--db path-to-dat-archive]
 Options:
 	--port  -p  Port to listen on. Default: 3000
-    --db        Path to the P2P Wiki database.
-                Default: ~/Library/Application Support/p2p-wiki/db
+    --db        Path to the P2P Wiki dat archive.
+                Default: /Users/j/Library/Application Support/p2p-wiki/db
 Examples:
-    wiki-feed-ui -p 8080 --db my-custom-p2p-wiki-db
+    wiki-feed-ui -p 8080 --db my-custom-p2p-wiki-archive
 ```
 
 
