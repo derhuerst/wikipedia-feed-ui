@@ -7,6 +7,7 @@ const path = require('path')
 const serve = require('serve-static')
 
 const createApi = (dat) => {
+	const stats = require('./lib/stats')(dat)
 	const pages = require('./lib/pages')(dat)
 	const page = require('./lib/page')(dat)
 	const pageHistory = require('./lib/page-history')(dat)
@@ -19,6 +20,7 @@ const createApi = (dat) => {
 
 	api.use('/static', serve(path.join(__dirname, 'static'), {index: false}))
 
+	api.get('/stats', stats)
 	api.get('/', pages)
 	api.get('/wiki/:slug', page)
 	api.get('/wiki/:slug/history', pageHistory)

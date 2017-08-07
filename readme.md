@@ -21,9 +21,10 @@ npm install wikipedia-feed-ui
 Usage:
     wiki-feed-ui [-p port] [--db path-to-dat-archive]
 Options:
-	--port  -p  Port to listen on. Default: 3000
-    --db        Path to the P2P Wiki dat archive.
-                Default: /Users/j/Library/Application Support/p2p-wiki/db
+    --offline  -o  Don't send data to other peers. Default: false
+    --port     -p  Port to listen on. Default: 3000
+    --db           Path to the P2P Wiki dat archive.
+                   Default: /Users/j/Library/Application Support/p2p-wiki/db
 Examples:
     wiki-feed-ui -p 8080 --db my-custom-p2p-wiki-archive
 ```
