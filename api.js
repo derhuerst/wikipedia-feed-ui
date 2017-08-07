@@ -8,7 +8,7 @@ const serve = require('serve-static')
 
 const createApi = (dat) => {
 	const stats = require('./lib/stats')(dat)
-	const pages = require('./lib/pages')(dat)
+	const index = require('./lib/page-index')(dat)
 	const page = require('./lib/page')(dat)
 	const pageHistory = require('./lib/page-history')(dat)
 	const onError = require('./lib/error')
@@ -21,7 +21,8 @@ const createApi = (dat) => {
 	api.use('/static', serve(path.join(__dirname, 'static'), {index: false}))
 
 	api.get('/stats', stats)
-	api.get('/', pages)
+	api.get('/', index)
+	api.get('/:ns', index)
 	api.get('/wiki/:slug', page)
 	api.get('/wiki/:slug/history', pageHistory)
 	api.get('/wiki/Special:History/:slug', pageHistory)
