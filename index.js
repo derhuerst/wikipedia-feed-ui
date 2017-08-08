@@ -7,9 +7,11 @@ const compression = require('compression')
 const path = require('path')
 const serve = require('serve-static')
 const openDat = require('dat-node')
+const pathExists = require('path-exists')
 
 const attachApi = require('./api')
 const handleErrors = require('./lib/error')
+const attachSetup = require('./lib/setup')
 
 const startServer = (db, port, opt, cb) => {
 	const app = express()
@@ -33,7 +35,20 @@ const startServer = (db, port, opt, cb) => {
 			app.use(handleErrors)
 		})
 	}
-	startApp()
+
+	pathExists(db)
+	.then((exists) => {
+		if (exists) return startApp(opt)
+
+		const setupDone = (key) => {
+			console.info(`setup done. dat key is ${key}.`)
+			startApp(Object.assign({}, opt, {key}))
+		}
+
+		console.info('db not found. going to show the setup page.')
+		attachSetup(app, setupDone)
+	})
+	.catch(cb)
 }
 
 module.exports = startServer

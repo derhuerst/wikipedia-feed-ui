@@ -47,7 +47,6 @@ const db = argv.db || defaultDb
 const port = argv.port || argv.p || 3000
 const offline = argv.offline || argv.o || false
 
-// todo: check if db path exists
 startServer(db, port, {offline}, (err) => {
 	if (err) return showError(err)
 	console.info(`Serving ${db} on port ${port}.`)
