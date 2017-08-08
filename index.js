@@ -46,7 +46,7 @@ const startServer = (db, port, opt, cb) => {
 		}
 
 		console.info('db not found. going to show the setup page.')
-		attachSetup(app, setupDone)
+		attachSetup(app, db, setupDone)
 	})
 	.catch(cb)
 }
