@@ -41,6 +41,7 @@
 		"path-exists": "^3.0.0",
 		"send": "^0.15.4",
 		"serve-static": "^1.12.3",
-		"slugg": "^1.2.0"
+		"slugg": "^1.2.0",
+		"through2": "^2.0.3"
 	}
 }
