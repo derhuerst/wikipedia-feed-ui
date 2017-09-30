@@ -42,6 +42,7 @@
 		"send": "^0.15.4",
 		"serve-static": "^1.12.3",
 		"slugg": "^1.2.0",
-		"through2": "^2.0.3"
+		"through2": "^2.0.3",
+		"wiki-article-name-encoding": "^0.1.0"
 	}
 }
