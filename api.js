@@ -13,6 +13,14 @@ const attachApi = (app, dat) => {
 		pageHistory: pageHistory(dat)
 	}
 
+	const keyAsHex = dat.archive.key.toString('hex')
+	app.use((req, res, next) => {
+		if (!res.headersSent) {
+			res.append('Hyperdrive-Key', keyAsHex)
+			res.append('Hyperdrive-Version', dat.archive.version)
+		}
+	})
+
 	app.get('/stats', routes.stats)
 	app.get('/', routes.index)
 	app.get('/:ns', routes.index)
