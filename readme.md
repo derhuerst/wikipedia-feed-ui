@@ -17,7 +17,7 @@ npm install wikipedia-feed-ui
 
 ## Usage
 
-```js
+```
 Usage:
     wiki-feed-ui [-p port] [--db path-to-dat-archive]
 Options:

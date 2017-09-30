@@ -19,6 +19,7 @@ const attachApi = (app, dat) => {
 			res.append('Hyperdrive-Key', keyAsHex)
 			res.append('Hyperdrive-Version', dat.archive.version)
 		}
+		next()
 	})
 
 	app.get('/stats', routes.stats)

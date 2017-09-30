@@ -33,6 +33,7 @@ const startServer = (db, port, opt, cb) => {
 
 			attachApi(app, dat)
 			app.use(handleErrors)
+			cb()
 		})
 	}
 
