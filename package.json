@@ -43,6 +43,6 @@
 		"serve-static": "^1.12.3",
 		"slugg": "^1.2.0",
 		"through2": "^3.0.1",
-		"wiki-article-name-encoding": "^0.1.0"
+		"wiki-article-name-encoding": "^0.2.0"
 	}
 }
